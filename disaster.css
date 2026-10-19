@@ -118,3 +118,17 @@
         filter: drop-shadow(0 0 3px rgba(193, 150, 88, 0.55));
     }
 }
+
+.txt-box {
+    width: 400px;
+    height: 500px;
+    top: 0;
+    left: 60%;
+    background-color: #FFF5F5;
+    opacity: 50%;
+    padding: 20px;
+    text-align: justify;
+    font-family: georgia;
+    font-size: 14px;
+    color: black;
+}
