@@ -13,16 +13,16 @@
 
 .decorative-box {
     position: absolute;
-    inset: 18px;
+    inset: 12px;
     z-index: 2;
     pointer-events: none;
 
-    border: 5px solid #4A4A4A;
-    outline: 2px solid #E2B4BD;
+    border: 5px solid #E2B4BD;
+    outline: 2px solid #F7D6D0;
     outline-offset: -7px;
 
     box-shadow:
-        0 0 8px #680018,
+        0 0 8px #FFF5F5,
         inset 0 0 12px rgba(104, 0, 24, 0.6);
 
     animation: border-glow 3s ease-in-out infinite alternate;
@@ -43,25 +43,25 @@
     inset: 3px;
 
     background:
-        linear-gradient(#c43c59, #c43c59) left top / 35px 2px no-repeat,
-        linear-gradient(#c43c59, #c43c59) left top / 2px 35px no-repeat,
+        linear-gradient(#FFF5F5, #FFF5F5) left top / 35px 2px no-repeat,
+        linear-gradient(#FFF5F5, #FFF5F5) left top / 2px 35px no-repeat,
 
-        linear-gradient(#c43c59, #c43c59) right top / 35px 2px no-repeat,
-        linear-gradient(#c43c59, #c43c59) right top / 2px 35px no-repeat,
+        linear-gradient(#FFF5F5, #FFF5F5) right top / 35px 2px no-repeat,
+        linear-gradient(#FFF5F5, #FFF5F5) right top / 2px 35px no-repeat,
 
-        linear-gradient(#c43c59, #c43c59) left bottom / 35px 2px no-repeat,
-        linear-gradient(#c43c59, #c43c59) left bottom / 2px 35px no-repeat,
+        linear-gradient(#FFF5F5, #FFF5F5) left bottom / 35px 2px no-repeat,
+        linear-gradient(#FFF5F5, #FFF5F5) left bottom / 2px 35px no-repeat,
 
-        linear-gradient(#c43c59, #c43c59) right bottom / 35px 2px no-repeat,
-        linear-gradient(#c43c59, #c43c59) right bottom / 2px 35px no-repeat;
+        linear-gradient(#FFF5F5, #FFF5F5) right bottom / 35px 2px no-repeat,
+        linear-gradient(#FFF5F5, #FFF5F5) right bottom / 2px 35px no-repeat;
 }
 
 @keyframes border-glow {
     from {
-        filter: drop-shadow(0 0 2px #680018);
+        filter: drop-shadow(0 0 2px ##FFF5F5, #FFF5F5);
     }
 
     to {
-        filter: drop-shadow(0 0 7px #c90035);
+        filter: drop-shadow(0 0 7px #4A4A4A);
     }
 }
