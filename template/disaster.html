@@ -16,7 +16,10 @@
 }
 
 .decorative-box {
+    z-index: 2;
+    box-sizing: border-box;
     border: 2px solid #680018;
+    pointer-events: none;
     animation: border-glow 3s ease-in-out infinite alternate;
 }
 
@@ -44,6 +47,7 @@
 <div class="disaster-template">
 
     <div class="background-image"></div>
+    <div class="decorative-box"></div>
 </div>
 
 </body>
