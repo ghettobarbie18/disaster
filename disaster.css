@@ -5,29 +5,63 @@
     position: relative;
 }
 
-.decorative-box {
-    z-index: 2;
-    box-sizing: border-box;
-    width: 700px;
-    height: 600px;
-    border: 2px solid #680018;
-    pointer-events: none;
-    animation: border-glow 3s ease-in-out infinite alternate;
-}
-
-@keyframes border-glow {
-    from {
-        box-shadow: 0 0 4px #680018;
-    }
-    to {
-        box-shadow:
-            0 0 10px #c90035,
-            0 0 25px #680018;
-    }
-}
-
 .background-image {
     width: 100%;
     height: 100%;
     background: url('https://raw.githubusercontent.com/ghettobarbie18/disaster/refs/heads/main/disaster.webp') center / cover no-repeat;
+}
+
+.decorative-box {
+    position: absolute;
+    inset: 12px;
+    z-index: 2;
+    pointer-events: none;
+
+    border: 2px solid #680018;
+    outline: 1px solid #a52a42;
+    outline-offset: -7px;
+
+    box-shadow:
+        0 0 8px #680018,
+        inset 0 0 12px rgba(104, 0, 24, 0.6);
+
+    animation: border-glow 3s ease-in-out infinite alternate;
+}
+
+/* Inner ornamental line */
+.decorative-box::before {
+    content: "";
+    position: absolute;
+    inset: 7px;
+    border: 1px solid rgba(220, 95, 120, 0.75);
+}
+
+/* Decorative corner details */
+.decorative-box::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+
+    background:
+        linear-gradient(#c43c59, #c43c59) left top / 35px 2px no-repeat,
+        linear-gradient(#c43c59, #c43c59) left top / 2px 35px no-repeat,
+
+        linear-gradient(#c43c59, #c43c59) right top / 35px 2px no-repeat,
+        linear-gradient(#c43c59, #c43c59) right top / 2px 35px no-repeat,
+
+        linear-gradient(#c43c59, #c43c59) left bottom / 35px 2px no-repeat,
+        linear-gradient(#c43c59, #c43c59) left bottom / 2px 35px no-repeat,
+
+        linear-gradient(#c43c59, #c43c59) right bottom / 35px 2px no-repeat,
+        linear-gradient(#c43c59, #c43c59) right bottom / 2px 35px no-repeat;
+}
+
+@keyframes border-glow {
+    from {
+        filter: drop-shadow(0 0 2px #680018);
+    }
+
+    to {
+        filter: drop-shadow(0 0 7px #c90035);
+    }
 }
