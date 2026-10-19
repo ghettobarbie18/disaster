@@ -11,57 +11,129 @@
     background: url('https://raw.githubusercontent.com/ghettobarbie18/disaster/refs/heads/main/disaster.webp') center / cover no-repeat;
 }
 
-.decorative-box {
+.disaster-template .decorative-box {
     position: absolute;
     inset: 12px;
     z-index: 2;
+    box-sizing: border-box;
     pointer-events: none;
 
-    border: 2px solid #E2B4BD;
-    outline: 2px solid #F7D6D0;
-    outline-offset: -7px;
-
+    border: 1px solid #94734c;
     box-shadow:
-        0 0 8px #FFF5F5,
-        inset 0 0 12px rgba(104, 0, 24, 0.6);
-
-    animation: border-glow 3s ease-in-out infinite alternate;
+        inset 0 0 8px rgba(148, 115, 76, 0.2),
+        0 0 5px rgba(148, 115, 76, 0.35);
 }
 
-/* Inner ornamental line */
-.decorative-box::before {
+.disaster-template .decorative-box::before {
     content: "";
     position: absolute;
-    inset: 7px;
-    border: 1px solid rgba(220, 95, 120, 0.75);
+    inset: 6px;
+    border: 1px solid rgba(215, 184, 133, 0.7);
+    box-sizing: border-box;
 }
-
-/* Decorative corner details */
-.decorative-box::after {
-    content: "";
+    
+.disaster-template .decorative-corners {
     position: absolute;
-    inset: 3px;
-
-    background:
-        linear-gradient(#FFF5F5, #FFF5F5) left top / 35px 2px no-repeat,
-        linear-gradient(#FFF5F5, #FFF5F5) left top / 2px 35px no-repeat,
-
-        linear-gradient(#FFF5F5, #FFF5F5) right top / 35px 2px no-repeat,
-        linear-gradient(#FFF5F5, #FFF5F5) right top / 2px 35px no-repeat,
-
-        linear-gradient(#FFF5F5, #FFF5F5) left bottom / 35px 2px no-repeat,
-        linear-gradient(#FFF5F5, #FFF5F5) left bottom / 2px 35px no-repeat,
-
-        linear-gradient(#FFF5F5, #FFF5F5) right bottom / 35px 2px no-repeat,
-        linear-gradient(#FFF5F5, #FFF5F5) right bottom / 2px 35px no-repeat;
+    inset: 12px;
+    z-index: 3;
+    pointer-events: none;
 }
 
-@keyframes border-glow {
-    from {
-        filter: drop-shadow(0 0 2px #FFF5F5);
+.disaster-template .corner {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    box-sizing: border-box;
+
+    border-color: #c6a36d;
+    border-style: solid;
+    border-width: 0;
+
+    filter: drop-shadow(0 0 3px rgba(193, 150, 88, 0.65));
+    animation: ornament-shimmer 4s ease-in-out infinite alternate;
+}
+
+.disaster-template .corner-tl {
+    top: 0;
+    left: 0;
+    border-top-width: 2px;
+    border-left-width: 2px;
+    border-top-left-radius: 22px;
+}
+
+.disaster-template .corner-tr {
+    top: 0;
+    right: 0;
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-top-right-radius: 22px;
+    animation-delay: 1s;
+}
+
+.disaster-template .corner-bl {
+    bottom: 0;
+    left: 0;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-bottom-left-radius: 22px;
+    animation-delay: 2s;
+}
+
+.disaster-template .corner-br {
+    bottom: 0;
+    right: 0;
+    border-bottom-width: 2px;
+    border-right-width: 2px;
+    border-bottom-right-radius: 22px;
+    animation-delay: 3s;
+}
+
+.disaster-template .corner::before {
+    content: "❧";
+    position: absolute;
+    color: #d5b47e;
+    font-family: Georgia, serif;
+    font-size: 34px;
+    line-height: 1;
+    text-shadow: 0 0 5px rgba(193, 150, 88, 0.8);
+}
+    
+.disaster-template .corner-tl::before {
+    top: 5px;
+    left: 5px;
+}
+
+.disaster-template .corner-tr::before {
+    top: 5px;
+    right: 5px;
+    transform: scaleX(-1);
+}
+
+.disaster-template .corner-bl::before {
+    bottom: 5px;
+    left: 5px;
+    transform: scaleY(-1);
+}
+
+.disaster-template .corner-br::before {
+    bottom: 5px;
+    right: 5px;
+    transform: scale(-1, -1);
+}
+
+@keyframes ornament-shimmer {
+    0% {
+        opacity: 0.65;
+        filter: drop-shadow(0 0 2px rgba(193, 150, 88, 0.35));
     }
 
-    to {
-        filter: drop-shadow(0 0 7px #4A4A4A);
+    50% {
+        opacity: 1;
+        filter: drop-shadow(0 0 7px rgba(225, 190, 126, 0.9));
+    }
+
+    100% {
+        opacity: 0.8;
+        filter: drop-shadow(0 0 3px rgba(193, 150, 88, 0.55));
     }
 }
