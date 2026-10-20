@@ -128,7 +128,7 @@
     width: max-content;
     height: auto;
     max-width: 100%;
-    top: calc(42% - 242px);
+    top: 10px;
     left: 20%;
     z-index: 5;
     margin: 0;
@@ -196,7 +196,7 @@
     position: absolute;
     width: 100%;
     height: auto;
-    top: calc(50% + 230px);
+    top: 35px;
     left: 0;
     z-index: 5;
     margin: 0;
